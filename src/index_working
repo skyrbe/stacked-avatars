@@ -1,0 +1,58 @@
+import React from 'react';
+import './styles.css';
+
+const defaultStyles = {
+  container: {
+    display: 'inline-flex'
+  },
+  avatarContainer: {
+    width: '32px',
+    height: '32px',
+    borderRadius: '50%',
+    boxShadow: '0 0 4px rgba(0, 0, 0, 0.5)',
+    border: '2px solid #FFF',
+    overflow: 'hidden',
+    marginLeft: '-20px'
+  },
+  avatar: {
+    width: '100%',
+    height: '100%',
+    marginTop: '0'
+  }
+}
+const GroupedAvatarIcons = ({
+  data = [],
+  imageKey,
+  maxAvatarCount = 3,
+  styles
+}) => {
+  const containerStyle = {
+    ...defaultStyles.container,
+    ...styles && styles.container || {}
+  };
+  const avatarContainerStyle = {
+    ...defaultStyles.avatarContainer,
+    ...styles && styles.avatarContainer || {}
+  };
+  const avatarStyle = {
+    ...defaultStyles.avatar,
+    ...styles && styles.avatar || {}
+  };
+  const items = data.map((item, index) => {
+    if (index < maxAvatarCount) {
+      return (
+        <div style={avatarContainerStyle}>
+          <img src={item[imageKey]} alt="Icon" style={avatarStyle} />
+        </div>
+      );
+    }
+    return (<></>);
+  });
+  return (
+    <div style={containerStyle}>
+      {items}
+    </div>
+  );
+};
+
+export default GroupedAvatarIcons;
