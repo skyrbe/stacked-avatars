@@ -38,6 +38,8 @@ The following props can be configured for this component
 
 | Prop | Description | Default |
 |:--- |:--- |:--- |
+| data | Contains the array of objects with each object containing a key, whose value is the imageURL for the stacked avatar | mandatory prop |
+| imageKey | This is the property that is present in each object in the data array, whose value is the imageURL for the stacked avatar | mandatory prop |
 | maxAvatarCount | Determines how many stacked avatars should be displayed | 3 |
 | styles | Let's you pass in your own style object |
 
