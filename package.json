@@ -1,6 +1,6 @@
 {
   "name": "stacked-avatars",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A React component which takes in an array of objects containing Images and renders them as stacked images",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
